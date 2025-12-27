@@ -607,7 +607,6 @@ p {
 }
 
 /* WIP Note */
-/* WIP Note */
 .wip-note {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
@@ -662,4 +661,13 @@ p {
     color: var(--text-secondary);
     margin-right: 8px;
     font-weight: 400;
+}
+
+/* Mobile Background Adjustment */
+@media (max-width: 600px) {
+    body {
+        background-image: none;
+        background-color: var(--bg-color);
+        /* Ensure fallback color is visible */
+    }
 }
