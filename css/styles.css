@@ -7,14 +7,14 @@
     /* Color Palette */
     --bg-color: #f5f5f7;
     /* Light clean background (Apple style) */
-    --text-primary: #1d1d1f;
-    /* High contrast dark grey, softer than pure black */
-    --text-secondary: #86868b;
-    /* Muted text for dates/metadata */
+    --text-primary: #000000;
+    /* Pure black for maximum contrast */
+    --text-secondary: #333333;
+    /* Much darker grey for readability on glass */
 
     /* Glassmorphism Tokens - Refined for "Crystal Clear" Look */
-    --glass-bg: rgba(255, 255, 255, 0.35);
-    /* More transparent */
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    /* Increased opacity to 0.65 for better contrast */
     --glass-border: 1px solid rgba(255, 255, 255, 0.3);
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     /* Stronger shadow for lift */
@@ -607,16 +607,21 @@ p {
 }
 
 /* WIP Note */
+/* WIP Note */
 .wip-note {
     text-align: center;
-    background: rgba(255, 170, 0, 0.1);
-    color: #9a5b13;
+    background: rgba(255, 255, 255, 0.9);
+    /* Almost solid white for readability */
+    color: #cc7700;
+    /* Darker orange */
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--radius-md);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
+    /* Flyer font weight */
     margin-bottom: var(--space-md);
-    border: 1px solid rgba(255, 170, 0, 0.15);
+    border: 1px solid rgba(255, 170, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
