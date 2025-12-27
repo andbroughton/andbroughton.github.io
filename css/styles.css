@@ -1,0 +1,650 @@
+/*
+    My Design System & Variables
+    I'm using CSS Custom Properties here to maintain a consistent theme
+    and easily manage the "Glassmorphism" aesthetic from a single place.
+*/
+:root {
+    /* Color Palette */
+    --bg-color: #f5f5f7;
+    /* Light clean background (Apple style) */
+    --text-primary: #1d1d1f;
+    /* High contrast dark grey, softer than pure black */
+    --text-secondary: #86868b;
+    /* Muted text for dates/metadata */
+
+    /* Glassmorphism Tokens - Refined */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --glass-blur: blur(12px);
+
+    /* Layout & Spacing */
+    --container-width: 900px;
+    /* Widened for better list view flow */
+    --radius-lg: 20px;
+    /* iOS rounded corners */
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    /* Spacing System */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+
+    /* Typography */
+    --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base Reset & Setup */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    /* Subtle mesh gradient background for depth */
+    background-image:
+        radial-gradient(at 0% 0%, rgba(100, 100, 255, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 100, 100, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: var(--space-lg) var(--space-sm);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 
+    Glass Panel Component 
+    A reusable wrapper for my main sections to give them that premium 'Apple-like' feel.
+*/
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    /* Lift effect */
+}
+
+/* Typography Overrides */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 750;
+    /* Extra bold for headings */
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-xs);
+    color: #111;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+/*
+    PROJECTS LIST VIEW
+    I'm using a minimalist list with tags here, similar to academic publication lists.
+*/
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.project-item {
+    display: flex;
+    align-items: baseline;
+    /* Align tag and title */
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: inherit;
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease;
+}
+
+.project-item:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 100, 0.05);
+    /* Very subtle blue tint */
+    color: #444;
+    /* Darker text for readability */
+    border-radius: 4px;
+    /* Slightly squarer than social pills */
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 80px;
+    /* Fixed width for alignment */
+    height: 24px;
+}
+
+/* Color variations for tags */
+.tag-new {
+    background-color: rgba(0, 122, 255, 0.1);
+    color: #007aff;
+}
+
+.tag-paper {
+    background-color: rgba(100, 100, 255, 0.1);
+    color: #444;
+}
+
+.tag-code {
+    background-color: rgba(40, 40, 40, 0.05);
+    color: #555;
+}
+
+.project-details {
+    flex: 1;
+}
+
+.project-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 0.5rem;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.2);
+    text-underline-offset: 2px;
+}
+
+.project-item:hover .project-title {
+    color: #007aff;
+    /* Apple Blue highlight */
+    text-decoration-color: #007aff;
+}
+
+.project-meta {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Timeline Logo Overlay */
+.timeline-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding-left: var(--space-md);
+    flex: 1;
+}
+
+.timeline-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+/* Update previous .timeline-content selector to remove padding since wrapper handles it */
+.timeline-content {
+    padding-left: 0;
+}
+
+/* Hide Bento Grid (Optionally keep if user wants to switch back) */
+.bento-grid {
+    display: none;
+}
+
+/* Mobile adjust for list view */
+@media (max-width: 600px) {
+    .project-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .project-tag {
+        margin-bottom: 0.2rem;
+    }
+
+    .timeline-content-wrapper {
+        flex-direction: column;
+    }
+
+    .timeline-logo {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 
+    BENTO GRID COMPONENT
+    (Currently unused/hidden)
+    Grid items that span differently to create visual interest.
+*/
+.bento-grid {
+    display: grid;
+    /* Auto-fit tries to fit as many columns as possible, min 250px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.bento-item {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 240px;
+    text-decoration: none;
+    /* In case the whole card is a link */
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-item:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+/* 
+    Bento Spans 
+    Use these helper classes to make items span multiple rows/cols
+    only when space permits (desktop).
+*/
+@media (min-width: 768px) {
+    .col-span-2 {
+        grid-column: span 2;
+    }
+
+    .row-span-2 {
+        grid-row: span 2;
+    }
+}
+
+.bento-content {
+    z-index: 2;
+}
+
+.bento-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.bento-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.bento-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Background images for visual pop */
+.bento-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bento-item:hover .bento-bg {
+    opacity: 0.2;
+}
+
+/* ABOUT SECTION */
+.about p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Footer (Simple) */
+footer {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Component Legacy Styles (Clean up later if needed) */
+p {
+    margin-bottom: 1rem;
+    color: #444;
+    /* Slightly softer body text */
+}
+
+/* 
+    HEADER COMPONENT 
+    Layout: Flexbox for side-by-side image and text.
+    Mobile: Stacks vertically via media query.
+*/
+.profile-header .header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-soft);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.bio {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+}
+
+/* 
+    SOCIALS COMPONENT
+    Style: Pill-shaped interactive buttons.
+    Animation: Subtle scale on hover.
+*/
+.socials-bar {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--glass-bg);
+    /* Reuse glass background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 999px;
+    /* Pill shape */
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background: white;
+    transform: scale(1.05);
+    /* Playful pop effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.social-link svg {
+    opacity: 0.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .profile-header .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socials-bar {
+        justify-content: center;
+    }
+}
+
+/*
+    TIMELINE COMPONENT
+    Structure: A vertical line with dots connecting my experience items.
+*/
+.timeline-item {
+    display: flex;
+    /* Side-by-side: Date | Content */
+    gap: var(--space-md);
+    position: relative;
+    padding-bottom: var(--space-lg);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* The vertical line */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 107px;
+    /* 115px (date) + 12px (half gap) */
+    top: 5px;
+    bottom: 0;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+    /* No line after last item */
+}
+
+/* The dot */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 103px;
+    /* Center on line (127 - 4) */
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-date {
+    width: 95px;
+    /* Reduced width to shift everything left */
+    text-align: right;
+    /* Reverted to right alignment per user request */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding-top: 2px;
+    /* Visual alignment with title */
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    /* Removed padding-left as it is now handled by the wrapper */
+    flex: 1;
+}
+
+/* Timeline Logo Overlay */
+.timeline-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    /* Removed padding-left entirely to bring logo closer to line */
+    padding-left: 0;
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+}
+
+.company {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Timeline Adjustment */
+@media (max-width: 600px) {
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 1.5rem;
+        border-left: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+
+    /* Remove custom line */
+
+    .timeline-item::after {
+        left: -6px;
+        /* Move dot to the new border line */
+        top: 0;
+    }
+
+    .timeline-date {
+        text-align: left;
+        width: auto;
+        color: var(--text-primary);
+    }
+}
+
+/* 
+    EDUCATION COMPONENT
+*/
+.education-item {
+    margin-bottom: var(--space-md);
+}
+
+/* Wrapper for the logo layout */
+.education-details {
+    flex: 1;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+}
+
+/* WIP Note */
+.wip-note {
+    text-align: center;
+    background: rgba(255, 170, 0, 0.1);
+    color: #9a5b13;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    border: 1px solid rgba(255, 170, 0, 0.15);
+}
+
+
+.edu-header h3 {
+    font-size: 1.15rem;
+    /* Equalized size */
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.edu-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Previously .school, now Degree Title on same line */
+.school {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    /* Equalized size */
+    margin: 0;
+}
+
+/* Specific override for Education Logo size */
+.education-item .timeline-logo {
+    width: 60px;
+    height: 60px;
+}
+
+/* Add a visual separator via pseudo-element to be cleaner than HTML */
+.school::before {
+    content: '•';
+    color: var(--text-secondary);
+    margin-right: 8px;
+    font-weight: 400;
+}

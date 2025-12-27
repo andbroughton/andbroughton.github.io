@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Broughton</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.1">
+</head>
+
+<body>
+    <main class="container">
+        <!-- Work In Progress Note -->
+        <div class="wip-note">
+            🚧 This site is currently under construction 🚧
+        </div>
+
+        <!-- 
+            Header Section
+            I'm using a glass-panel wrapper here for a consistent aesthetic.
+            Flexbox handles the layout of my profile picture and text.
+        -->
+        <header class="glass-panel profile-header">
+            <div class="header-content">
+                <img src="assets/images/headshot.jpeg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-text">
+                    <h1>Andrew Broughton</h1>
+                    <p class="tagline">Software Engineer</p>
+                    <p class="bio">
+                        New graduate starting my career in software engineering!
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 
+            Socials Section
+            My social links displayed as a horizontal list of pill-shaped buttons.
+        -->
+        <section class="socials-bar animate-on-scroll" aria-label="Social Links">
+            <a href="mailto:andrewmbroughton@gmail.com" class="social-link">
+                <!-- Email -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/andrewmbroughton" class="social-link">
+                <!-- LinkedIn -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/andbroughton" class="social-link">
+                <!-- Simple SVG Icons (Github) -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+                GitHub
+            </a>
+        </section>
+
+        <!-- 
+            Career Timeline
+            This section features a custom vertical border to create a "connected nodes" effect between my roles.
+        -->
+        <section class="timeline glass-panel animate-on-scroll" aria-labelledby="experience-heading">
+            <h2 id="experience-heading">Experience</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-date">August 2026</div>
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/Capital_One_logo.png" alt="Capital One Logo" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Incoming Software Engineer</h3>
+                        <span class="company">Capital One</span>
+                        <p>Starting in August 2026.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Summer 2025</div>
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/capital_one_logo.png" alt="Capital One Logo" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Analyst Intern</h3>
+                        <span class="company">Capital One</span>
+                        <p>Designed fraud defense strategies using an AI-powered detection system and utilized
+                            SQL/Python to prevent up to $150,000 in annual fraud losses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Summer 2024</div>
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/NFCU.svg" alt="NFCU Logo" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Software Development Intern</h3>
+                        <span class="company">Navy Federal Credit Union</span>
+                        <p>Developed a Blazor web app to automate fund transfers, reducing manual work by 2,000 hours
+                            annually. Led process improvement using data-driven methodologies, earning Lean Six Sigma
+                            Green Belt.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Summer 2023</div>
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/xtec.jpeg" alt="XTec Logo" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Engineering Intern</h3>
+                        <span class="company">XTec Incorporated</span>
+                        <p>Implemented FIDO2/WebAuthn multi-factor authentication solutions using Java and Gradle.
+                            Assisted the Senior Security Architect with code reviews, bug fixes, and documentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">January 2023 - Present</div>
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/UVA.svg" alt="UVA Logo" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Teaching Assistant – Applied Mathematics</h3>
+                        <span class="company">University of Virginia</span>
+                        <p>Created 3D printed models to illustrate complex concepts for Multivariable Calculus. Provided
+                            comprehensive support to students in Probability and Multivariable Calculus courses through
+                            grading and office hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="education glass-panel animate-on-scroll" aria-labelledby="education-heading">
+            <h2 id="education-heading">Education</h2>
+            <div class="education-item">
+                <div class="timeline-content-wrapper">
+                    <img src="assets/images/UVA.svg" alt="University Logo" class="timeline-logo">
+                    <div class="education-details">
+                        <div class="edu-header">
+                            <div class="edu-title-group">
+                                <h3>University of Virginia</h3>
+                                <span class="school">B.S. Computer Science</span>
+                            </div>
+                            <span class="year">2022 - 2026</span>
+                        </div>
+                        <p>Minor: Business (McIntire School of Commerce)</p>
+                        <p>GPA: 4.0/4.0</p>
+                        <p>Study Abroad: Siena, Italy – Spring 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            Projects List View
+            I chose a text-heavy, tag-based list here to cleanly display my work, replacing the previous grid layout.
+        -->
+        <section class="projects glass-panel animate-on-scroll" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="projects-list">
+
+                <!-- Project 1 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-code">GitHub</span>
+                    <div class="project-details">
+                        <span class="project-title">Project Management Application</span>
+                        <span class="project-meta">Semester-long team project for Software Engineering class</span>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-code">GitHub</span>
+                    <div class="project-details">
+                        <span class="project-title">Daily Bugle Newspaper</span>
+                        <span class="project-meta">Final project for Internet Scale Applications class</span>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-paper">Paper</span>
+                    <div class="project-details">
+                        <span class="project-title">Machine Learning Research</span>
+                        <span class="project-meta">Semester Research Project for Machine Learning Course</span>
+                    </div>
+                </a>
+
+                <!-- Project 4 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-paper">Paper</span>
+                    <div class="project-details">
+                        <span class="project-title">Using NLP for Automated Fake News Detection</span>
+                        <span class="project-meta">Semester Research Project for NLP Course</span>
+                    </div>
+                </a>
+
+                <!-- Project 5 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-code">GitHub</span>
+                    <div class="project-details">
+                        <span class="project-title">Penguin Adventures Game</span>
+                        <span class="project-meta">Short platforming game built with PyGame</span>
+                    </div>
+                </a>
+
+                <!-- Project 6 -->
+                <a href="https://github.com/andbroughton" class="project-item">
+                    <span class="project-tag tag-code">GitHub</span>
+                    <div class="project-details">
+                        <span class="project-title">NBA ROY Prediction</span>
+                        <span class="project-meta">Using Machine Learning Tools to Predict the NBA Rookie of the
+                            Year</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="about glass-panel animate-on-scroll" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+                In my free time, I enjoy playing basketball, running, lifting weights, hiking, and almost any other
+                physical activity. I also enjoy traveling, reading, and watching movies.
+            </p>
+            <p>
+                At UVA, I am a co-founder of the Virginia AI Safety Initiative (VAISI), a student-run organization
+                focused on promoting AI safety and responsible AI development.
+            </p>
+        </section>
+
+        <footer>
+            <!-- <p>&copy; 2025 Andrew Broughton. Built with Vanilla HTML/CSS.</p> -->
+        </footer>
+
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
