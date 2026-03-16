@@ -12,15 +12,6 @@
     --text-secondary: #333333;
     /* Much darker grey for readability on glass */
 
-    /* Glassmorphism Tokens - Refined for "Crystal Clear" Look */
-    --glass-bg: rgba(255, 255, 255, 0.45);
-    /* Increased opacity to 0.65 for better contrast */
-    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    /* Stronger shadow for lift */
-    --glass-blur: blur(20px);
-    /* Heavy frosted blur */
-
     /* Layout & Spacing */
     --container-width: 900px;
     /* Widened for better list view flow */
@@ -51,7 +42,7 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-color);
+    background-color: #ffffff;
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -64,26 +55,9 @@ body {
     width: 100%;
 }
 
-/* 
-    Glass Panel Component 
-    A reusable wrapper for my main sections to give them that premium 'Apple-like' feel.
-*/
 .glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: var(--radius-lg);
-    padding: var(--space-md);
+    padding: var(--space-md) 0;
     margin-bottom: var(--space-md);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.glass-panel:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-    /* Lift effect */
 }
 
 /* Typography Overrides */
@@ -131,7 +105,7 @@ h2 {
 }
 
 .project-item:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .project-tag {
@@ -421,24 +395,15 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 16px;
-    background: var(--glass-bg);
-    /* Reuse glass background */
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 999px;
-    /* Pill shape */
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .social-link:hover {
-    background: white;
-    transform: scale(1.05);
-    /* Playful pop effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
 }
 
 .social-link svg {
@@ -597,18 +562,10 @@ p {
 /* WIP Note */
 .wip-note {
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    /* Almost solid white for readability */
     color: #cc7700;
-    /* Darker orange */
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-md);
     font-size: 0.85rem;
-    font-weight: 700;
-    /* Flyer font weight */
+    font-weight: 600;
     margin-bottom: var(--space-md);
-    border: 1px solid rgba(255, 170, 0, 0.3);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
