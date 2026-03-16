@@ -27,8 +27,8 @@
     --space-lg: 3rem;
 
     /* Typography */
-    --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: 'Spectral', Georgia, serif;
+    --font-body: 'Spectral', Georgia, serif;
 }
 
 /* Base Reset & Setup */
@@ -42,6 +42,7 @@
 
 body {
     font-family: var(--font-body);
+    font-weight: 500;
     background-color: #ffffff;
     color: var(--text-primary);
     line-height: 1.6;
