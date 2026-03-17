@@ -6,21 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrew Broughton</title>
     <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <main class="container">
-        <!-- Work In Progress Note -->
         <div class="wip-note">
             🚧 This site is currently under construction 🚧
         </div>
 
-        <!-- 
-            Header Section
-            I'm using a glass-panel wrapper here for a consistent aesthetic.
-            Flexbox handles the layout of my profile picture and text.
-        -->
         <header class="glass-panel profile-header">
             <div class="header-content">
                 <img src="assets/images/headshot.jpeg" alt="Profile Picture" class="profile-pic">
@@ -28,19 +22,14 @@
                     <h1>Andrew Broughton</h1>
                     <p class="tagline">Software Engineer</p>
                     <p class="bio">
-                        New graduate starting my career in software engineering!
+                        Graduating May 2026 and starting my career in software engineering.
                     </p>
                 </div>
             </div>
         </header>
 
-        <!-- 
-            Socials Section
-            My social links displayed as a horizontal list of pill-shaped buttons.
-        -->
         <section class="socials-bar animate-on-scroll" aria-label="Social Links">
             <a href="mailto:andrewmbroughton@gmail.com" class="social-link">
-                <!-- Email -->
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -48,8 +37,7 @@
                 </svg>
                 Email
             </a>
-            <a href="https://www.linkedin.com/in/andrewmbroughton" class="social-link">
-                <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/andrewmbroughton" class="social-link" target="_blank" rel="noopener">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -58,8 +46,7 @@
                 </svg>
                 LinkedIn
             </a>
-            <a href="https://github.com/andbroughton" class="social-link">
-                <!-- Simple SVG Icons (Github) -->
+            <a href="https://github.com/andbroughton" class="social-link" target="_blank" rel="noopener">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path
@@ -70,10 +57,6 @@
             </a>
         </section>
 
-        <!-- 
-            Career Timeline
-            This section features a custom vertical border to create a "connected nodes" effect between my roles.
-        -->
         <section class="timeline glass-panel animate-on-scroll" aria-labelledby="experience-heading">
             <h2 id="experience-heading">Experience</h2>
 
@@ -115,6 +98,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-date">Summer 2023</div>
                 <div class="timeline-content-wrapper">
@@ -143,7 +127,6 @@
             </div>
         </section>
 
-        <!-- Education -->
         <section class="education glass-panel animate-on-scroll" aria-labelledby="education-heading">
             <h2 id="education-heading">Education</h2>
             <div class="education-item">
@@ -157,24 +140,17 @@
                             </div>
                             <span class="year">2022 - 2026</span>
                         </div>
-                        <p>Minor: Business (McIntire School of Commerce)</p>
-                        <p>GPA: 4.0/4.0</p>
-                        <p>Study Abroad: Siena, Italy – Spring 2025</p>
+                        <p>GPA: 4.0/4.0<br>Study Abroad: Siena, Italy – Spring 2025</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 
-            Projects List View
-            I chose a text-heavy, tag-based list here to cleanly display my work, replacing the previous grid layout.
-        -->
         <section class="projects glass-panel animate-on-scroll" aria-labelledby="projects-heading">
             <h2 id="projects-heading">Projects</h2>
             <div class="projects-list">
 
-                <!-- Project 1 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-code">GitHub</span>
                     <div class="project-details">
                         <span class="project-title">Project Management Application</span>
@@ -182,8 +158,7 @@
                     </div>
                 </a>
 
-                <!-- Project 2 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-code">GitHub</span>
                     <div class="project-details">
                         <span class="project-title">Daily Bugle Newspaper</span>
@@ -191,8 +166,7 @@
                     </div>
                 </a>
 
-                <!-- Project 3 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-paper">Paper</span>
                     <div class="project-details">
                         <span class="project-title">Machine Learning Research</span>
@@ -200,8 +174,7 @@
                     </div>
                 </a>
 
-                <!-- Project 4 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-paper">Paper</span>
                     <div class="project-details">
                         <span class="project-title">Using NLP for Automated Fake News Detection</span>
@@ -209,8 +182,7 @@
                     </div>
                 </a>
 
-                <!-- Project 5 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-code">GitHub</span>
                     <div class="project-details">
                         <span class="project-title">Penguin Adventures Game</span>
@@ -218,13 +190,11 @@
                     </div>
                 </a>
 
-                <!-- Project 6 -->
-                <a href="https://github.com/andbroughton" class="project-item">
+                <a href="https://github.com/andbroughton" class="project-item" target="_blank" rel="noopener">
                     <span class="project-tag tag-code">GitHub</span>
                     <div class="project-details">
                         <span class="project-title">NBA ROY Prediction</span>
-                        <span class="project-meta">Using Machine Learning Tools to Predict the NBA Rookie of the
-                            Year</span>
+                        <span class="project-meta">Using Machine Learning Tools to Predict the NBA Rookie of the Year</span>
                     </div>
                 </a>
 
@@ -238,14 +208,11 @@
                 physical activity. I also enjoy traveling, reading, and watching movies.
             </p>
             <p>
-                At UVA, I am a co-founder of the Virginia AI Safety Initiative (VAISI), a student-run organization
-                focused on promoting AI safety and responsible AI development.
+                At UVA, I am a co-founder of the <a href="https://vaisi.org/" target="_blank" rel="noopener">Virginia AI Security Initiative (VAISI)</a>, a community at the University of Virginia dedicated to mitigating the risks of advanced AI.
             </p>
         </section>
 
-        <footer>
-            <!-- <p>&copy; 2025 Andrew Broughton. Built with Vanilla HTML/CSS.</p> -->
-        </footer>
+        <footer></footer>
 
     </main>
     <script src="js/script.js"></script>
